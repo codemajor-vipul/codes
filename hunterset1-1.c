@@ -1,0 +1,78 @@
+#include<stdio.h>
+#include<stdlib.h>
+void main()
+{
+	int n,k=0,i,j,count,x,temp;
+	scanf("%d",&n);
+	int *a=malloc(sizeof(int)*n);
+	int *b=malloc(sizeof(int)*n);
+	int *c=malloc(sizeof(int)*n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	for(i=0;i<n;i++)
+	{
+		c[i]=0;
+	}
+	for(i=0;i<n;i++)
+	{
+	    x=a[i];
+	    //printf("%d",x);
+		count=0;
+		for(j=i+1;j<n;j++)
+		{
+			if(x!=0)
+			{
+				if(a[j]==x)
+				{
+				    //printf("%d",x);
+					c[i]++;
+					//printf("%d",c[i]);
+					a[j]=0;
+				}
+			}
+		}
+		//printf("%d",count);
+		/*if(count!=0)
+			{
+				b[k]=x;
+				//printf("%d",b[k]);
+				k++;
+				
+			}*/		
+	}
+	for(i=0;i<n;i++)
+	{
+		if(c[i]>0)
+		{
+			b[k]=a[i];
+			//printf("%d",b[k]);
+			k++;
+			//printf("%d",k);
+		}
+	}
+	if(k==0)
+	{
+		printf("unique");
+	}
+	else
+	{
+		for(i=0;i<k-1;i++)
+		{
+			for(j=0;j<k-i-1;j++)
+			{
+				if(a[j]>a[j+1])
+				{
+					temp=b[j];
+					b[j]=b[j+1];
+					b[j+1]=temp;
+				}
+			}
+		}
+		for(i=0;i<k;i++)
+		{
+			printf("%d",b[i]);
+		}
+	}
+}
