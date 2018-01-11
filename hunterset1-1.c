@@ -18,7 +18,6 @@ void main()
 	for(i=0;i<n;i++)
 	{
 	    x=a[i];
-	    //printf("%d",x);
 		count=0;
 		for(j=i+1;j<n;j++)
 		{
@@ -26,30 +25,18 @@ void main()
 			{
 				if(a[j]==x)
 				{
-				    //printf("%d",x);
 					c[i]++;
-					//printf("%d",c[i]);
 					a[j]=0;
 				}
 			}
-		}
-		//printf("%d",count);
-		/*if(count!=0)
-			{
-				b[k]=x;
-				//printf("%d",b[k]);
-				k++;
-				
-			}*/		
+		}		
 	}
 	for(i=0;i<n;i++)
 	{
 		if(c[i]>0)
 		{
 			b[k]=a[i];
-			//printf("%d",b[k]);
 			k++;
-			//printf("%d",k);
 		}
 	}
 	if(k==0)
