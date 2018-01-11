@@ -8,6 +8,10 @@ void main()
 	for(i=0;i<n;i++)
 	{
 		scanf("%d",&a[i]);
+		if(a[i]<0)
+		{
+			exit(0);
+		}
 	}
 	for(i=0;i<n-1;i++)
 	{
